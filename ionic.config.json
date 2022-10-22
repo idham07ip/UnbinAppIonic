@@ -1,0 +1,7 @@
+{
+  "name": "unbinapp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
