@@ -1,0 +1,190 @@
+ion-header {
+    background: transparent;
+    ion-item {
+      --background: transparent;
+      ion-avatar {
+        background: white;
+      }
+    }
+  }
+
+  
+  
+  ion-content {
+    * {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+  
+    .main-header {
+      height: 45vh;
+      width: 150%;
+      background: #4697ee;
+      box-shadow: 0 15px 10px var(--ion-color-light-shade);
+      border-radius: 0 0 50% 50%;
+      margin-left: -14vh;
+      margin-top: -60px;
+    }
+    
+  ion-grid {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(10vh);
+    padding-bottom: 8vh;
+    ion-row {
+      ion-col {
+        ion-label {
+          ion-note {
+            font-size: 0.7rem;
+          }
+          ion-chip {
+            ion-label {
+              font-size: 1.4rem;
+              font-weight: bold;
+              letter-spacing: 0.5px;
+              text-shadow: 1px 1px 1px var(--ion-color-medium);
+            }
+          }
+          b {
+            font-size: 1.2rem;
+          }
+        }
+        ion-button {
+          height: 3em !important;
+          transform: translateY(10%);
+          text-transform: none;
+          ion-text {
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px var(--ion-color-medium);
+          }
+          ion-icon {
+            font-size: 1rem;
+          }
+        }
+        ion-card {
+          box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
+          border-radius: 10px !important;
+          margin: 10px 0px;
+          ion-thumbnail {
+            width: 8vh;
+            height: 8vh;
+            border-radius: 20px;
+            img {
+              width: 4vh;
+              height: 4vh;
+              transform: translateY(50%);
+            }
+          }
+          ion-card-content {
+            ion-label {
+              font-weight: bold;
+              text-shadow: 1px 1px 1px var(--ion-color-medium);
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+      }
+    }
+    ion-list {
+      background: transparent;
+      ion-item {
+        width: 95%;
+        margin: auto;
+        border-radius: 5px;
+        margin-bottom: 2vh;
+        p {
+          font-size: 0.65rem;
+        }
+        ion-text {
+          font-weight: 800;
+        }
+      }
+    }
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 42px 26px 16px 26px;
+  
+      h2 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: bold;
+        color: #364f6b;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--ion-color-pink);
+      }
+    }
+    .live-event {
+      border-radius: 10px;
+      box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.16);
+      margin: 0 26px 26px 26px;
+      display: flex;
+      justify-content: space-between;
+  
+      img {
+        border-radius: 10px 0 0 10px;
+        object-fit: cover;
+      }
+  
+      .info {
+        padding: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+  
+      .content {
+        h6 {
+          color: #364f68;
+          font-size: 14px;
+          font-weight: bold;
+          margin-bottom: 5px;
+          margin-top: 0px;
+        }
+  
+        .location {
+          display: flex;
+          align-items: center;
+          color: var(--ion-color-pink);
+          font-size: 10px;
+          margin-bottom: 5px;
+          margin-top: 0;
+        }
+  
+        .stats {
+          display: flex;
+          margin-bottom: 5px;
+          margin-top: 0;
+  
+          span {
+            display: flex;
+            align-items: center;
+            color: #000;
+            font-size: 10px;
+            margin-right: 10px;
+          }
+        }
+      }
+      .indicator {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        div {
+          background: #ffe6e6;
+          border-radius: 12px;
+          padding: 15px;
+          color: var(--ion-color-pink);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ion-toolbar {
+  --background:  #4697ee;
+  color: white;
+
+  ion-buttons {
+    --background: white;
+  }
+
+  border-radius: 0 0 25px 25px;
+  height: 65px;
+}
+
+html {
+  height: 100%;
+}
+body {
+  background: #000;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+.container {
+  max-width: 300px;
+  height: 100%;
+  margin: auto;
+  display: table;
+}
+.header {
+  background: #0088ff;
+  color: #fff;
+  height: 50px;
+  display: table-row;
+  line-height: 34px;
+  text-align: center;
+}
+h1 {
+  padding: 8px 16px;
+}
+.chats {
+  padding: 16px;
+  display: block;
+  height: 100%;
+  overflow-y: scroll;
+}
+.chat-bubble {
+  margin: 6px 0px;
+  padding: 4px 8px;
+  display: block;
+  position: relative;
+  max-width: 80%;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  clear: both;
+}
+.msg-in {
+  background: #fff;
+  text-align: left;
+  float: left;
+}
+.msg-out {
+  background: #dcf8c6;
+  text-align: left;
+  float: right;
+}
+.msg-in::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: -6px;
+  top: 0;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+}
+.msg-in::after {
+  content: attr(data-time);
+  font-size: 12px;
+  color: #8a8a8a;
+  position: relative;
+  margin: 4px;
+  float: right;
+  bottom: -6px;
+  right: -8px;
+}
+.msg-out::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: -6px;
+  top: 0;
+  border: 10px solid transparent;
+  border-top-color: #dcf8c6;
+}
+.msg-out::after {
+  content: attr(data-time);
+  font-size: 12px;
+  color: #8a8a8a;
+  position: relative;
+  margin: 4px;
+  margin-right: 25px;
+  float: right;
+  bottom: -6px;
+  right: -8px;
+}
+span {
+  float: right;
+  position: absolute;
+  bottom: 0px;
+  right: -4px;
+  transform: rotate(30deg);
+}
+span::before {
+  width: 2px;
+  height: 6px;
+  content: "";
+  display: block;
+  position: relative;
+  float: right;
+  margin: 4px;
+  right: 14px;
+  bottom: -2px;
+  border: 1px solid transparent;
+}
+span::after {
+  width: 2px;
+  height: 6px;
+  content: "";
+  display: block;
+  position: relative;
+  float: right;
+  margin: 4px;
+  right: -1px;
+  bottom: 0px;
+  border: 1px solid transparent;
+}
+.read::before {
+  border-color: transparent #0088ff #0088ff transparent;
+}
+.read::after {
+  border-color: transparent #0088ff #0088ff transparent;
+}
+.delivered::before {
+  border-color: transparent grey grey transparent;
+}
+.delivered::after {
+  border-color: transparent grey grey transparent;
+}
+.sent::before {
+  border-color: transparent grey grey transparent;
+}

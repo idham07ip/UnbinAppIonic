@@ -1,11 +1,104 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Card Student
-    </ion-title>
-  </ion-toolbar>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border">
+  <ion-item lines="none">
+    <ion-avatar slot="start">
+      <img src="/assets/ava.jpg"/>
+    </ion-avatar>
+    <ion-label >
+      <p style="color: #fff; font-family: 'Poppins', sans-serif; font-size: 13px;">Hallo,</p>
+      <h3 >Christoper</h3>
+    </ion-label>
+    <h4 routerLink="/login" slot="end" style="color: #fff;">Logout</h4>
+  </ion-item>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+<ion-content [fullscreen]="true" color="light">
+
+  <div class="main-header"></div>
+
+  <ion-grid>
+
+    <!-- name and npm start -->
+    <ion-row>
+      <ion-col size="6">
+        <ion-label>
+          <ion-note color="light" class="ion-margin-start" style="font-size: 15px;">
+            Teknik Informatika
+          </ion-note>
+          <p>
+            <ion-chip color="light">
+              <ion-label class="ion-text-wrap">
+                15200080
+              </ion-label>
+            </ion-chip>
+          </p>
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- name and npm end -->
+
+    <ion-row class="ion-margin-horizontal">
+      <ion-col  *ngFor="let item of features" size="6" style="margin-top: 70px; margin-left: 90px;">
+        <ion-card class="ion-text-center">
+          <ion-card-header>
+            <div align="center">
+              <ion-thumbnail [style.background]="item?.background" style="width: 100px; height: 100px; ">
+                <img [src]="item?.src" style="width: 60px; height: 60px; margin-top: -10px;" />
+              </ion-thumbnail>
+            </div>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-label color="dark">{{ item?.name }}</ion-label>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-list>
+    
+      <div class="default-top-padding title">
+        <h2>Kegiatan yang sedang berlangsung</h2>
+      </div>
+    
+      <div class="live-event">
+        <img src="/assets/event3.svg" />
+    
+        <div class="info">
+          <div class="content">
+            <h6>Hari seni sedunia</h6>
+    
+            <p class="stats">
+              <span> <ion-icon name="eye"></ion-icon>1,7ribu </span>
+              <span> <ion-icon name="heart"></ion-icon>&nbsp;3758 </span>
+            </p>
+    
+            <p class="location">
+              <ion-icon name="location"></ion-icon>Bogor, Indonesia
+            </p>
+            <div class="additional-info">
+              <div class="attendees">
+                <img src="/assets/person/person1.svg" />
+                <img src="/assets/person/person2.svg" />
+                <img src="/assets/person/person3.svg" />
+                <img src="/assets/person/person4.svg" />
+    
+                <div class="count">
+                  <img src="/assets/person/person-placeholder.svg" />
+                  <p>+6</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="indicator">
+            <div>Live</div>
+          </div>
+        </div>
+      </div>
+    </ion-list>
+
+  </ion-grid>
+  
+</ion-content>  

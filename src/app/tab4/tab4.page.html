@@ -1,10 +1,19 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Infomation
-    </ion-title>
+    <ion-label style="margin-left: 20px; font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 20px;">Information</ion-label>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
+  <div style="margin-top: 30px;">
+    <div class="chats">
+      <p data-time="4:20 PM" class="chat-bubble msg-in">Hi</p>
+      <p data-time="4:20 PM" class="chat-bubble msg-out">Hello<span class="read"></span></p>
+      <p data-time="4:20 PM" class="chat-bubble msg-in">Have you heard about Coding and Stuff</p>
+      <p data-time="4:21 PM" class="chat-bubble msg-out">Yeah I know, they post awesome coding tutorials<span class="delivered"></span></p>
+      <p data-time="4:21 PM" class="chat-bubble msg-in">But did you know they have a youtube channel?</p>
+      <p data-time="4:21 PM" class="chat-bubble msg-out">Yeah I also subscribed to their channel<span class="sent"></span></p>
+    </div>
+  </div>
 </ion-content>
