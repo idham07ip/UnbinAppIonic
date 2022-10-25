@@ -1,0 +1,20 @@
+ion-toolbar {
+    --background:  #4697ee;
+    color: white;
+
+    ion-button{
+      --background:  #4697ee;
+      color: white;
+    }
+  
+    border-radius: 0 0 25px 25px;
+    height: 65px;
+  }
+
+   * {
+    font-family: "Poppins", sans-serif;
+  }
+
+  ion-content{
+    --background:linear-gradient(to right,#fff, #9dbcdc);
+  }

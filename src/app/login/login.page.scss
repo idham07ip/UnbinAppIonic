@@ -1,3 +1,7 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .imgLondon{
   width: 25%;
   margin-top: 90px;
@@ -9,20 +13,17 @@ ion-content{
   border-left: 10px solid #ffde59;
 
   .header{
-    padding: 0 12vw;
-    // margin-top: 9em;
+    padding: 0 35px;
     color: #fff;
+    p{
+      font-size: 1.5rem; 
+    }
     h3{
       font-size: 1.1rem;
       color: #9d9bef;
       span{
         color: #fff;
       }
-    }
-    h1{
-      font-size: 1.5rem;
-      font-weight: 400;
-      font-family: 'poppins';
     }
   }
 

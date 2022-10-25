@@ -3,15 +3,15 @@
     <img class="imgLondon" src="/assets/london.png" alt="">
 
   </div>
-  <div class="header">
-      <h1>Please Login to Continue</h1>
+     <div class="header">
+      <p>Please Login to Continue</p>
     </div>
     <div class="form">
       <ion-input type="email" placeholder="Email"></ion-input>
       <ion-input type="password" placeholder="Password"></ion-input>
     </div>
 
-    <div class="button" routerLink="/tabs/tab1">
+    <div class="button" (click)="login()">
       Login <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
   </ion-content>

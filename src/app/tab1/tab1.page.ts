@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  data = [];
+
   features: any[] = [
     {id: 1, name: 'Scan this QR Code', src: '/assets/qr1.png', background: 'rgba(255, 196, 9, 0.1)', page: ''}
   ];
@@ -16,6 +18,13 @@ export class Tab1Page {
     {id: 2, vendor: 'Flaticons', image: '', amount: -1200, time: '4:00PM'}
   ];
 
-  constructor() {}
+  constructor() {
+    setTimeout(() => {
+      this.data.push({
+        prodi: "Teknik Informatika",
+        npm: "15200001",
+      });
+    }, 2000);
+  }
 
 }

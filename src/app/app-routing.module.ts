@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+  },
+  {
+    path: 'popup-component',
+    loadChildren: () => import('./popup-component/popup-component.module').then( m => m.PopupComponentPageModule)
+  },
+  {
+    path: 'detail-history',
+    loadChildren: () => import('./detail-history/detail-history.module').then( m => m.DetailHistoryPageModule)
   }
 ];
 @NgModule({
