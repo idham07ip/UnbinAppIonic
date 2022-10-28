@@ -5,19 +5,19 @@
 <ion-header class="ion-no-border">
   <ion-item lines="none">
     <ion-avatar slot="start">
-      <img src="/assets/ava.jpg"/>
+      <img src="/assets/ava.png"/>
     </ion-avatar>
     <ion-label >
       <p style="color: #fff; font-family: 'Poppins', sans-serif; font-size: 13px;">Hallo,</p>
-      <h3 >Christoper</h3>
+      <h3 >{{nama}}</h3>
     </ion-label>
-    <h4 routerLink="/login" slot="end" style="color: #fff;">Logout</h4>
+    <h4 (click)="logout()" slot="end" style="color: #fff;">Logout</h4>
   </ion-item>
 </ion-header>
 
 <ion-content [fullscreen]="true" color="light">
 
-  <div class="main-header"></div>
+  <div class="main-header" style="margin-top: -60px;"></div>
 
   <ion-grid>
 
@@ -63,7 +63,7 @@
 
     <!-- if data not found -->
     <ion-row class="ion-margin-horizontal" *ngIf="!data.length">
-      <ion-col size="6" style="margin-top: 70px; margin-left: 90px;">
+      <ion-col  size="5" style="margin-top: 45px; margin-left: 108px;">
         <ion-card class="ion-text-center">
           <ion-card-header>
             <div align="center">
@@ -72,9 +72,6 @@
               </ion-thumbnail>
             </div>
           </ion-card-header>
-          <ion-card-content>
-            <ion-skeleton-text animated style="width: 80%; margin-left: 18px;"></ion-skeleton-text>
-          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
@@ -82,12 +79,12 @@
 
     <!-- if data found -->
     <ion-row class="ion-margin-horizontal" *ngIf="data.length">
-      <ion-col  *ngFor="let item of features" size="6" style="margin-top: 70px; margin-left: 90px;">
+      <ion-col  *ngFor="let item of features" size="5" style="margin-top: 45px; margin-left: 108px;">
         <ion-card class="ion-text-center">
           <ion-card-header>
             <div align="center">
-              <ion-thumbnail [style.background]="item?.background" style="width: 100px; height: 100px; ">
-                <img [src]="item?.src" style="width: 60px; height: 60px; margin-top: -10px;" />
+              <ion-thumbnail  style="width: 100px; height: 100px; ">
+                  <ngx-qrcode [value]="createCode"></ngx-qrcode>  
               </ion-thumbnail>
             </div>
           </ion-card-header>
@@ -99,95 +96,32 @@
     </ion-row>
 
     <ion-list *ngIf="!data.length">
-    
       <div class="default-top-padding title">
-        <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
       </div>
     
       <div class="live-event">
-        <ion-skeleton-text>
-          <img src=""/>
-        </ion-skeleton-text>
     
         <div class="info">
           <div class="content">
-              <ion-skeleton-text>
-                <h6></h6>
-              </ion-skeleton-text>
-              <ion-skeleton-text>
-                <p class="stats">
-                  <span> <ion-icon name="eye"></ion-icon></span>
-                  <span> <ion-icon name="heart"></ion-icon></span>
-                </p>
-              </ion-skeleton-text>
-              
-              <ion-skeleton-text>
-                <p class="location">
-                  <ion-icon name="location"></ion-icon>
-                </p>
-              </ion-skeleton-text>
-              
-              <div class="additional-info">
-                
-                <div class="attendees">
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
-                  <img src="" />
-
-                <ion-skeleton-text>
-                  <div class="count">
-                    <img src="" />
-                    <p></p>
-                  </div>
-                </ion-skeleton-text>
-                </div>
-              </div>
-            </div>
-            <div class="indicator">
-              <div></div>
-            </div>
+            <ion-skeleton-text animated  style="border:0; height:200px; width:300px;"></ion-skeleton-text>
+          </div>
         </div>
       </div>
+     
     </ion-list>
 
     <ion-list *ngIf="data.length">
     
       <div class="default-top-padding title">
-        <h2>Kegiatan yang sedang berlangsung</h2>
+        <h2>Letak Kampus</h2>
       </div>
     
       <div class="live-event">
-        <img src="/assets/event3.svg" />
     
         <div class="info">
           <div class="content">
-            <h6>Hari seni sedunia</h6>
-    
-            <p class="stats">
-              <span> <ion-icon name="eye"></ion-icon>1,7ribu </span>
-              <span> <ion-icon name="heart"></ion-icon>&nbsp;3758 </span>
-            </p>
-    
-            <p class="location">
-              <ion-icon name="location"></ion-icon>Bogor, Indonesia
-            </p>
-            <div class="additional-info">
-              <div class="attendees">
-                <img src="/assets/person/person1.svg" />
-                <img src="/assets/person/person2.svg" />
-                <img src="/assets/person/person3.svg" />
-                <img src="/assets/person/person4.svg" />
-    
-                <div class="count">
-                  <img src="/assets/person/person-placeholder.svg" />
-                  <p>+6</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="indicator">
-            <div>Live</div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4316380364016!2d106.78774781418628!3d-6.593152266283562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5b447cc4d03%3A0x66f69b3852e13819!2sUNIVERSITAS%20BINANIAGA%20BOGOR!5e0!3m2!1sid!2sid!4v1666965425175!5m2!1sid!2sid" height="200" width="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>

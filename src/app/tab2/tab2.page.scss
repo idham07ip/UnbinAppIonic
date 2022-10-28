@@ -1,3 +1,8 @@
+*{
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+  }
+}
 ion-toolbar {
   --background:  #4697ee;
   color: white;
@@ -24,6 +29,7 @@ ion-item{
 }
 
 ion-input{
-font-weight: 800;
+  font-weight: 800;
   font-family: 'poppins';
+  color: black;
 }

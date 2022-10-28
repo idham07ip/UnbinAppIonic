@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
-
+import { finalize } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Storage } from '@ionic/storage';
+import { Observable } from 'rxjs';
+import {
+  NavController,
+  ToastController,
+  LoadingController,
+} from '@ionic/angular';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -7,10 +16,11 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+
   data = [];
 
   features: any[] = [
-    {id: 1, name: 'Scan this QR Code', src: '/assets/qr1.png', background: 'rgba(255, 196, 9, 0.1)', page: ''}
+    {id: 1, background: 'rgba(255, 196, 9, 0.1)', page: ''}
   ];
 
   transactions: any[] = [
@@ -18,13 +28,73 @@ export class Tab1Page {
     {id: 2, vendor: 'Flaticons', image: '', amount: -1200, time: '4:00PM'}
   ];
 
-  constructor() {
+  kd_bimbingan: any;
+  results: any;
+  nama: string;
+  npm: any;
+  password: string = '';
+  qrdata: any;
+  createCode: any;
+
+  constructor(
+    private storage: Storage,
+    private navCtrl: NavController,
+    private http: HttpClient
+
+  ) {
+
+    this.getname();
+    this.create();
+
+    
+
     setTimeout(() => {
       this.data.push({
         prodi: "Teknik Informatika",
-        npm: "15200001",
+        npm: this.npm,
       });
     }, 2000);
+  }
+
+  public create(){
+    this.storage.get('isLoggedIn').then(val => {
+      let data: Observable<any>;
+      data = this.http.get('https://apikonseling.adistiradyiputra.my.id/api/getname/'+val);
+      data.subscribe(result => {       
+        this.createCode = result[0].npm;
+        this.nama = result[0].nama;
+        // console.log(this.npm);
+        // console.log(this.nama);
+    
+      });
+    });
+      
+  }
+
+  getname() {
+      this.storage.get('isLoggedIn').then(val => {
+      let data: Observable<any>;
+      data = this.http.get('https://apikonseling.adistiradyiputra.my.id/api/getname/'+val);
+      data.subscribe(result => {       
+        this.npm = result[0].npm;
+        this.nama = result[0].nama;
+        console.log(this.npm);
+        console.log(this.nama);
+    
+      });
+    })
+  }
+  
+
+  
+
+  
+  
+
+  logout() {
+    this.storage.clear();
+    localStorage.clear();
+    this.navCtrl.navigateRoot('/login');
   }
 
 }

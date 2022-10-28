@@ -4,22 +4,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  [fullscreen]="true">
-    <div class="content_div">
+<ion-content  [fullscreen]="true" >
+    <div class="content_div" *ngFor="let hasil of arrayData">
       <ion-grid>
-        <ion-row class="">
-          <ion-icon name="ellipsis-vertical-outline" (click)="presentPopover($event)" class="icon-detail"></ion-icon>
-          <ion-col size="12">
+        <ion-row class="" >
+          <ion-icon name="ellipsis-vertical-outline"  (click)="get(hasil.kd_capture)" class="icon-detail"></ion-icon>
+          <ion-col size="12" >
             <ion-list>
               <ion-item>
                 <ion-thumbnail slot="start">
                   <img alt="" src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" />
                 </ion-thumbnail>
                 <ion-label>
-                  <h2>Adistira Dyiputra <span style="float: right"> 
-                  </span></h2>
-                  <p id="rate">Teknik Informatika</p>
-                  <p class="npm">15200001</p>
+                  <h2> <span style="float: right"> 
+                  </span>{{hasil.keterangan}}</h2>
+                  <p id="rate" >{{hasil.dentry}}</p>
+                  <p class="npm">Kode Bimbingan : "  {{hasil.kd_bimbingan}}  "</p>
                 </ion-label>
               </ion-item>
             </ion-list>
@@ -28,46 +28,5 @@
         </ion-row>
       </ion-grid>
 
-      <ion-grid>
-        <ion-row>
-          <ion-icon name="ellipsis-vertical-outline" (click)="presentPopover($event)" class="icon-detail"></ion-icon>
-          <ion-col size="12">
-            <ion-list>
-              <ion-item>
-                <ion-thumbnail slot="start">
-                  <img alt="" src="https://cdn-icons-png.flaticon.com/512/4140/4140061.png" />
-                </ion-thumbnail>
-                <ion-label>
-                  <h2>Idham Irama Permana<span style="float: right"> 
-                  </span></h2>
-                  <p id="rate">Teknik Informatika</p>
-                  <p class="npm">15200007</p>
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-      <ion-grid>
-        <ion-row>
-          <ion-icon name="ellipsis-vertical-outline" (click)="presentPopover($event)" class="icon-detail"></ion-icon>
-          <ion-col size="12">
-            <ion-list>
-              <ion-item>
-                <ion-thumbnail slot="start">
-                  <img alt="" src="https://cdn-icons-png.flaticon.com/512/4140/4140052.png" />
-                </ion-thumbnail>
-                <ion-label>
-                  <h2>Harya Nugroho<span style="float: right"> 
-                  </span></h2>
-                  <p id="rate">Teknik Informatika</p>
-                  <p class="npm">15200006</p>
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
     </div>
 </ion-content>

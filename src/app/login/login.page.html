@@ -7,11 +7,11 @@
       <p>Please Login to Continue</p>
     </div>
     <div class="form">
-      <ion-input type="email" placeholder="Email"></ion-input>
-      <ion-input type="password" placeholder="Password"></ion-input>
+      <ion-input type="number" placeholder="Npm" [(ngModel)]="npm"></ion-input>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
     </div>
 
-    <div class="button" (click)="login()">
+    <div class="button" (click)="login(password)">
       Login <ion-icon name="chevron-forward-outline"></ion-icon>
     </div>
   </ion-content>

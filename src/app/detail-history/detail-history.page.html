@@ -10,22 +10,21 @@
 <ion-content [fullscreen]="true" class="ion-padding">
 
 <ion-card>
-  <img style="margin-right: 150px;" alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <img style="margin-right: 150px;"  src="https://apikonseling.adistiradyiputra.my.id/bukti/{{images}}" />
   <ion-card-header>
-    <ion-card-title>Foto</ion-card-title>
-    <ion-card-subtitle>Foto Keterangan</ion-card-subtitle>
+    <ion-card-subtitle>Bukti Bimbingan</ion-card-subtitle>
   </ion-card-header>
 </ion-card>
 
   <ion-card-content>
     <ion-item>
-      <ion-label position="floating">Masukkan Keterangan</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label position="stacked">Keterangan</ion-label>
+      <ion-input type="text" disabled>{{keterangan}}</ion-input>
     </ion-item>
 <hr>
     <ion-item>
-      <ion-label position="stacked"></ion-label>
-      <ion-input type="text" placeholder="Masukkan Tanggal Bimbingan"></ion-input>
+      <ion-label position="stacked">Tanggal Bimbingan</ion-label>
+      <ion-input type="text" disabled >{{dentry}}</ion-input>
     </ion-item>
 
   </ion-card-content>
